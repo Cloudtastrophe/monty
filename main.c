@@ -1,4 +1,6 @@
+#define _POSIX_C_SOURCE 200809L
 #include "monty.h"
+#include <stdio.h>
 
 bus_t bus = {NULL, NULL, NULL, 0};
 
@@ -6,11 +8,7 @@ bus_t bus = {NULL, NULL, NULL, 0};
  * main - Monty code interpreter
  * @argc: number of arguments
  * @argv: Monty file location
- *
- * Description: Entry point for the Monty code interpreter. Reads a Monty
- * script file, executes the opcodes, and prints any errors encountered.
- *
- * Return: 0 on success, EXIT_FAILURE on failure
+ * Return: 0 on success
  */
 int main(int argc, char *argv[])
 {
@@ -53,5 +51,6 @@ int main(int argc, char *argv[])
 
     free_stack(stack);
     fclose(file);
+
     return (0);
 }
